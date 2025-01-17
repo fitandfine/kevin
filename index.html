@@ -4,7 +4,7 @@
   <!-- Basic meta tags for responsiveness and character encoding -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Barsha Dhakal | Medical Officer</title>
+  <title>Kevin Knowles | Explorer & Marathon Runner</title>
 
   <!-- Font Awesome for icons -->
   <link
@@ -15,7 +15,7 @@
   <!-- 
     Inline CSS for demonstration purposes.
     For production usage, consider placing these styles in a separate .css file.
-    Modified to have a purple-dominant theme and some creative animations.
+    Maintained the same purple-dominant theme and animations from Dr. Barsha's page.
   -->
   <style>
     /* 
@@ -44,7 +44,7 @@
 
     /*
       Header
-      Changed to purple gradient
+      Purple gradient
     */
     header {
       background: linear-gradient(135deg, #6a1b9a, #8e24aa);
@@ -70,8 +70,7 @@
 
     /* 
       Hero / Top Section 
-      This holds the photo on the left and the introduction on the right
-      in a flex container on larger screens. 
+      Flex container to hold photo (left) and intro (right)
     */
     .hero {
       background-color: #ffffff;
@@ -105,7 +104,7 @@
       margin: 0 auto;
       display: block;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      /* Add a light rotation or float animation for creativity */
+      /* Light float animation for creativity */
       animation: profileFloat 4s infinite ease-in-out;
     }
 
@@ -114,22 +113,19 @@
       50% { transform: translateY(-8px) rotate(0deg); }
     }
 
-    /* 
-      Hover effect on the image 
-    */
     .profile-img:hover {
       transform: scale(1.03);
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      animation: none; /* Stop the float if hovered */
+      animation: none; /* Stop float on hover */
     }
 
     /* 
       Intro text area 
     */
     .intro {
-      flex: 1; /* Grows to take remaining space in the .hero flex container */
+      flex: 1; /* Grows to take the remaining space */
       padding: 20px;
-      text-align: left;  /* On larger screens, left-align the text */
+      text-align: left;
     }
 
     .intro h2 {
@@ -151,7 +147,7 @@
     }
 
     /* 
-      For smaller screens, stack the hero sections and center text 
+      Stack hero sections on smaller screens 
     */
     @media(max-width: 768px) {
       .hero {
@@ -166,7 +162,7 @@
     }
 
     /* 
-      Buttons Container: For Social and Contact 
+      Buttons Container 
     */
     .btn-section {
       width: 90%;
@@ -202,8 +198,7 @@
     }
 
     /* 
-      Footer (unchanged) 
-      Keeping the EXACT same footer as requested.
+      Footer (kept exactly the same)
     */
     footer {
       background-color: #2c3e50;
@@ -287,8 +282,7 @@
     }
 
     /* 
-      For a bit of spacing from the bottom 
-      so the final section isn't hidden by fixed footer 
+      Spacer to ensure footer doesn't overlap on mobile 
     */
     .spacer {
       height: 100px;
@@ -298,52 +292,45 @@
 <body>
   <!-- Header with name -->
   <header>
-    <h1>Dr. Barsha Dhakal</h1>
+    <h1>Kevin Knowles</h1>
   </header>
 
   <!-- Hero section with profile photo on the left & text on the right -->
   <div class="hero">
-    <!-- Keeping profile.jpg as requested -->
+    <!-- Keeping filename 'profile.jpg' as requested -->
     <img
       src="profile.jpg"
-      alt="Profile photo of Dr. Barsha Dhakal"
+      alt="Profile photo of Kevin Knowles"
       class="profile-img"
     />
     <div class="intro">
-      <h2>Medical Officer</h2>
-      <h3>at Tikapur Hospital</h3>
+      <h2>Explorer &amp; Marathon Runner</h2>
+      <h3>Retired Engineer</h3>
       <p>
-        NMC No: 34057<br />
-        MBBS, University of Rajshahi
+        Email: kevin.knowles8@gmail.com<br />
+        Phone: +64 2722 99992
       </p>
     </div>
   </div>
 
-  <!-- Contact Buttons (Call, SMS, WhatsApp, Email) -->
+  <!-- Contact Buttons (Call, SMS, and Email) -->
   <div class="btn-section">
     <h2 style="text-align: center; color: #6a1b9a;">Get in Touch</h2>
     <div class="btn-grid">
-      <!-- 
-        Keeping SMS & phone number the same
-        (Using Dr. Barsha's phone for both call & sms: +9779765625431) 
-      -->
-      <a href="tel:+9779765625431" class="btn">
+      <!-- Phone button -->
+      <a href="tel:+64272299992" class="btn">
         <i class="fas fa-phone"></i>&nbsp; Call
       </a>
-      <a href="sms:+9779765625431" class="btn">
+      <!-- SMS button -->
+      <a href="sms:+64272299992" class="btn">
         <i class="fas fa-sms"></i>&nbsp; SMS
       </a>
-      <!-- WhatsApp with her specific number +9779825946195 -->
-      <a href="https://wa.me/9779825946195" class="btn">
-        <i class="fab fa-whatsapp"></i>&nbsp; WhatsApp
-      </a>
-      <!-- You can change the email below if desired; or remove it if not needed -->
-      <a href="mailto:barshadhakal53@gmail.com" class="btn">
+      <!-- Email button -->
+      <a href="mailto:kevin.knowles8@gmail.com" class="btn">
         <i class="fas fa-envelope"></i>&nbsp; Email
       </a>
     </div>
   </div>
-
 
   <!-- Spacer to prevent overlap with fixed footer on small screens -->
   <div class="spacer"></div>
@@ -391,25 +378,20 @@
       }
     }
 
-    // Save contact (directly from JavaScript, no separate .vcf file)
+    // Save contact as a vCard
     function saveContact() {
-      // Since many browsers do not allow direct "add contact" actions,
-      // we can open a data URI of the vCard content.
       const vCardData =
         "BEGIN:VCARD\n" +
         "VERSION:3.0\n" +
-        "FN:Dr. Barsha Dhakal\n" +
-        "TITLE:Medical Officer, Tikapur Hospital\n" +
-        "NOTE:NMC No: 34057\\nMBBS from University of Rajshahi\n" +
-        "TEL;TYPE=WORK,VOICE:+9779765625431\n" +
-        "TEL;TYPE=CELL,VOICE:+9779765625431\n" +
-        "TEL;TYPE=WHATSAPP,VOICE:+9779825946195\n" +
+        "FN:Kevin Knowles\n" +
+        "TITLE:Explorer, Marathon Runner, Retired Engineer\n" +
+        "NOTE:You can reach me via email or phone.\n" +
+        "TEL;TYPE=WORK,VOICE:+64272299992\n" +
+        "TEL;TYPE=CELL,VOICE:+64272299992\n" +
+        "EMAIL;TYPE=INTERNET:kevin.knowles8@gmail.com\n" +
         "END:VCARD";
 
-      // Create a data URL for the vCard
       const vCardDataURI = "data:text/vcard;charset=utf-8," + encodeURIComponent(vCardData);
-
-      // Open in a new tab - user can then save the contact
       window.open(vCardDataURI, '_blank');
     }
   </script>
